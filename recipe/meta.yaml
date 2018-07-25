@@ -11,21 +11,24 @@ source:
     - no_test_import.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [osx or win]
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
     - pip
     - cython
     - mpi4py
-    - numpy 1.11.*
+    - numpy
   run:
     - python
     - mpi4py
-    - numpy >=1.11
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
