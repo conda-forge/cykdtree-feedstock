@@ -11,7 +11,7 @@ source:
     - no_test_import.patch
 
 build:
-  number: 1001
+  number: 1002
   skip: True  # [osx or win]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
