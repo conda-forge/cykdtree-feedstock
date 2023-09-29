@@ -22,7 +22,7 @@ requirements:
   host:
     - python
     - pip
-    - cython
+    - cython <3
     - mpi4py
     - numpy
   run:
