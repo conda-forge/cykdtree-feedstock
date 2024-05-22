@@ -11,13 +11,14 @@ source:
     - no_test_import.patch
 
 build:
-  number: 1007
+  number: 1008
   skip: True  # [osx or win]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -28,7 +29,6 @@ requirements:
   run:
     - python
     - mpi4py
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
